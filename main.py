@@ -10,17 +10,26 @@ def display_msg():
     6. Exit 
 '''
     return print(msg)
-    
+
+def add_contact(contacts):
+    name=input("Enter Name: ")
+    phone=input("Enter Phone: ")
+    email=input("Enter Email: ")
+    address=input("Enter Address: ")
+    contacts[name]={"Phone":phone, "Email":email, "Address":address}
+    print("success")
+
 def main():
-    contact={}
+    contacts={}
     display_msg()
     while True:
         choice=int(input("Enter Choice: "))
         if choice == 6:
+            print(contacts)
             print("Exit")
             break
         elif choice == 1:
-            pass
+            add_contact(contacts)
         elif choice == 2:
             pass
         elif choice == 3:
