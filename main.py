@@ -35,6 +35,12 @@ def search_contact(contacts):
     contact = contacts.get(name,"Not found")
     print(contact)
 
+def delete_contact(contacts):
+    name= input("Enter name to delete: ")
+    if name in contacts:
+        contacts.pop(name)
+        print("Record deleted successfully")
+
 def main():
     contacts={
         'Alice': {'phone': '123-456-7890', 'email': 'alice@example.com', 'address': '123 Maple Street'},
@@ -54,7 +60,7 @@ def main():
         elif choice == 3:
             update_contact(contacts)
         elif choice == 4:
-            pass
+            delete_contact(contacts)
         elif choice == 5:
             display_contacts(contacts)
         else:
